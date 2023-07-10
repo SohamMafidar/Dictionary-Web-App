@@ -3,17 +3,19 @@
 This project was built as a solution to Front End Mentor's [this](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL) challenge.
 
 Project is built using React.js as frontend framework and uses vanilla CSS. With this web-app, user can ->
-![Default State](<Dictionary-App Default-State.JPG>)
-
-![Searched State](<Dictionary-App Searched-State.JPG>)
-
-![Dark Theme](<Dictionary-App Dark-State.JPG>)
 
 -   Search for any word & get it's definition, nouns, adjectives, verbs etc, depending upon Free Dictionary API's response.
 -   Play the audio file for a word when it's available.
 -   Switch between Serif, Monospace & Roboto fonts.
 -   Switch between light and dark themes.
 -   See hover and focus states for all interactive elements on the page.
+
+![Default State](<Dictionary-App Default-State.JPG>)
+
+![Searched State](<Dictionary-App Searched-State.JPG>)
+
+![Dark Theme](<Dictionary-App Dark-State.JPG>)
+
 
 # Challenges
 
