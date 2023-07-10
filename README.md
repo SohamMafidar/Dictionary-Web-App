@@ -10,9 +10,17 @@ Project is built using React.js as frontend framework and uses vanilla CSS. With
 -   Switch between light and dark themes.
 -   See hover and focus states for all interactive elements on the page.
 
+  # Default State
+
 ![Default State](<Dictionary-App Default-State.JPG>)
 
+
+  # Searched State  
+
 ![Searched State](<Dictionary-App Searched-State.JPG>)
+
+
+  # Dark Theme
 
 ![Dark Theme](<Dictionary-App Dark-State.JPG>)
 
