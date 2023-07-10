@@ -48,7 +48,7 @@ function Container(props) {
                 </div>
                 {container}
                 <footer>
-                    <h7>Source</h7> <span>{source}</span>
+                    <h4>Source</h4> <span>{source}</span>
                 </footer>
             </section>
         );
