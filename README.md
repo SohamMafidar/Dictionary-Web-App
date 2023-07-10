@@ -1,3 +1,45 @@
+# About the Project
+
+This project was built as a solution to FrontEnd Mentor's [this](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL) challenge.
+
+Project is built using React.js as frontend framework and uses vanilla CSS. With this web-app, user can ->
+![Default State](<Dictionary-App Default-State.JPG>)
+
+![Searched State](<Dictionary-App Searched-State.JPG>)
+
+![Dark Theme](<Dictionary-App Dark-State.JPG>)
+
+-   Search for any word & get it's definition, nouns, adjectives, verbs etc, depending upon Free Dictionary API's response.
+-   Play the audio file for a word when it's available.
+-   Switch between Serif, Monospace & Roboto fonts.
+-   Switch between light and dark themes.
+-   See hover and focus states for all interactive elements on the page.
+
+# Challenges
+
+-   Working with an inconsistent API response
+
+    -   Sometimes the the audio file would be the second key in an object, sometimes third, sometimes there would be multiple key and sometimes there won't even be a one.
+    -   Sometimes API would take a long time to respond or would not respond at all.
+    -   Lot of response would return multiple objects each having it's own audio file, phonetic & parts of speech.
+
+-   Changing Themes & Fonts
+
+    -   Entire website should reflect colors when theme is changed and font family when selected instantaneously and should not reload the page.
+
+-   Gracefully handling Errors
+    -   When the data is being fetched by API, there should be a loading screen, if there is no data for a particular word, the UI should convey so.
+    -   If the there is no audio file, user should know so.
+    -   There should be only one verb, noun, adjective etc heading in case multiple objects are returned by the API.
+
+# Learnings
+
+-   How to make a loading screen
+-   Work with APIs in React
+-   Managing state changes and passing of state changes for the entire application
+-   Working with audio in React
+-   Working with various Hooks in React
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -38,33 +80,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
