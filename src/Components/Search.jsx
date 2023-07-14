@@ -8,7 +8,6 @@ export default function Search({ data, setData }) {
 
   const [searchTerm, setSearchTerm] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
-  // const [data, setData] = React.useState([]);
   const [isIconClicked, setIsIconClicked] = React.useState(false);
 
   React.useEffect(() => {
@@ -19,7 +18,7 @@ export default function Search({ data, setData }) {
         setIsLoading(false); //? Removing the loading screen
       }).catch((err) => {
         console.log('Some error propped up ', err); //TODO Code for loading screen
-        return (<h1>Server Down!! Come back later 💋</h1>)
+        return (<h1>Server Down!! Come back later 🙃</h1>)
       })
       setIsIconClicked(false);
     }
@@ -42,7 +41,6 @@ export default function Search({ data, setData }) {
     setIsIconClicked(true);
   }
 
-  // console.log(JSON.stringify(data));
   if (isLoading) {
     return (
       <div className='loading-screen'>

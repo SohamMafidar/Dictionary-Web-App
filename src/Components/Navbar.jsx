@@ -1,14 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faCaretDown, faBook, faSun } from "@fortawesome/free-solid-svg-icons";
-// import Select from 'react-select';
-// import fonts from "../Utils/fonts";
 
 function Temp({ handleThemeChange, handleFontChange, theme }) {
     const [isOpen, setIsOpen] = React.useState(false);
     const dropdownRef = React.useRef();
-    // const options = fonts;
-
 
     React.useEffect(() => {
         let handler = (event) => {
@@ -22,13 +18,12 @@ function Temp({ handleThemeChange, handleFontChange, theme }) {
         };
     }, []);
 
-    //toggling theme change
+    //? toggling theme change
     const toggleChange = () => {
         handleThemeChange();
     };
 
     const handleFontClick = (selectedOption) => {
-        // console.log(e);
         handleFontChange(selectedOption);
         setIsOpen(false);
     };
@@ -61,11 +56,6 @@ function Temp({ handleThemeChange, handleFontChange, theme }) {
                     <a href="#/" onClick={() => handleFontClick('Roboto')}>
                         Roboto
                     </a>
-                    {/* <Select
-                        className="font-select"
-                        options={options}
-                        onChange={handleFontClick}
-                    /> */}
                 </div>
             </div>
             <div className="navbar__theme">

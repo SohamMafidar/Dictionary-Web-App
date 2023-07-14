@@ -6,15 +6,12 @@ import { faMartiniGlassEmpty } from '@fortawesome/free-solid-svg-icons';
 function Container(props) {
     //* If there is data coming from API, display this screen
     if (props.data.length !== 0) {
-        // console.log(props.data);
         const data = props.data;
         const word = data.og;
         const audio = data.audio;
         const source = data.source;
         const text = data.text;
 
-        //? Using this loop to get rid of the above variables so that we can iterate over the meaning array of objects
-        // delete data.og; delete data.source; delete data.audio; delete data.text;
         const container = data.map((item) => {
             return (
                 <div className="container">
@@ -59,7 +56,7 @@ function Container(props) {
         return (
             <div className="alt-container">
                 <h1>Wow such empty</h1>
-                <FontAwesomeIcon icon={faMartiniGlassEmpty} size='2xl' />
+                <FontAwesomeIcon icon={faMartiniGlassEmpty} size='2xl' id='empty-icon' />
             </div>
         )
     }

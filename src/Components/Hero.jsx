@@ -1,22 +1,17 @@
 import React from 'react'
-// import useSound from 'use-sound'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 function Hero(props) {
-    // const [play, { stop }] = useSound(props.audio);
     const [isPlaying, setIsPlaying] = React.useState(false);
-
     const audioWord = new Audio(props.audio);
 
     const handleClick = () => {
         setIsPlaying((prevState) => {
             const playState = !prevState;
             if (playState) {
-                // play();
                 audioWord.play();
             }
-            // stop();
             return playState;
         });
 

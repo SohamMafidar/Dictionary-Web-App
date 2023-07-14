@@ -18,6 +18,11 @@
     background-color: white;
 }
 
+.loading-screen{
+ margin-top: 40%;
+ margin-left: 50%;
+}
+
 main{
     font-family: sans-serif;
 }
@@ -181,6 +186,10 @@ form{
 
 .alt-container h1{
   font-size: 45px;
+}
+
+#empty-icon {
+  margin-top: 1.6%;
 }
 
 /* Main content */
