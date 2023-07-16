@@ -14,11 +14,16 @@ export default function Search({ data, setData }) {
     if (isIconClicked) {
       setIsLoading(true); //? Setting up the loading screen while pulling up the data  
       ApiCall(searchTerm).then((resp) => {
-        setData(resp); //? Setting up the props data variable passed from App.js after the data is pulled up  
-        setIsLoading(false); //? Removing the loading screen
+        if (Object.keys(resp).length === 0) {
+          setIsLoading(false);
+          setData(['No data']);
+        }
+        else {
+          setData(resp); //? Setting up the props data variable passed from App.js after the data is pulled up  
+          setIsLoading(false); //? Removing the loading screen
+        }
       }).catch((err) => {
         console.log('Some error propped up ', err); //TODO Code for loading screen
-        return (<h1>Server Down!! Come back later 🙃</h1>)
       })
       setIsIconClicked(false);
     }
@@ -57,6 +62,7 @@ export default function Search({ data, setData }) {
       </div>
     );
   }
+
   else {
     return (
       <div className='search'>

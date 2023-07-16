@@ -5,7 +5,7 @@ import { faMartiniGlassEmpty } from '@fortawesome/free-solid-svg-icons';
 
 function Container(props) {
     //* If there is data coming from API, display this screen
-    if (props.data.length !== 0) {
+    if (props.data.length !== 0 && props.data[0] !== 'No data') {
         const data = props.data;
         const word = data.og;
         const audio = data.audio;
@@ -49,6 +49,15 @@ function Container(props) {
                 </footer>
             </section>
         );
+    }
+
+    else if (props.data[0] === 'No data') {
+        return (
+            <div className="no-content-container">
+                <p>Oops! word not found 😕 </p>
+                <p>Try checking your spelling and try again 🙃</p>
+            </div>
+        )
     }
 
     //* If there is no data then show this screen

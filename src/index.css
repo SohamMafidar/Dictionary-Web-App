@@ -19,8 +19,8 @@
 }
 
 .loading-screen{
- margin-top: 40%;
- margin-left: 50%;
+  margin-top: 6%;
+  margin-left: 41%;
 }
 
 main{
@@ -190,6 +190,16 @@ form{
 
 #empty-icon {
   margin-top: 1.6%;
+}
+
+.no-content-container{
+  margin-top: 8%;
+  margin-left: 24%;
+}
+
+.no-content-container p{
+  font-size: 25px;
+  margin-bottom: 2%;
 }
 
 /* Main content */

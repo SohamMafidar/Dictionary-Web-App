@@ -48,6 +48,8 @@ export default async function ApiCall(word) {
         result.text = text;
         return result;
     } catch (error) {
+        const result = {};
         console.log("Some error, need loading screen for it ", error);
+        return result;
     }
 }

@@ -9,7 +9,6 @@ function App() {
     const [data, setData] = React.useState([]);
     const [theme, setTheme] = React.useState(themes.black);
     const [font, setFont] = React.useState(fonts[0].value);
-    console.log(`Current font idss ${font}`);
     const handleThemeChange = () => {
         setTheme(theme === themes.white ? themes.black : themes.white);
     };
