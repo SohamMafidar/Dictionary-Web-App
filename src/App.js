@@ -7,7 +7,7 @@ import fonts from "./Utils/fonts";
 
 function App() {
     const [data, setData] = React.useState([]);
-    const [theme, setTheme] = React.useState(themes.black);
+    const [theme, setTheme] = React.useState(themes.white);
     const [font, setFont] = React.useState(fonts[0].value);
     const handleThemeChange = () => {
         setTheme(theme === themes.white ? themes.black : themes.white);
