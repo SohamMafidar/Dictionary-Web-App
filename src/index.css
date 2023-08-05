@@ -154,6 +154,7 @@ form{
 ::placeholder{
   color: #000000;
   font-weight: bolder;
+  opacity: 50%;
 
 }
 
