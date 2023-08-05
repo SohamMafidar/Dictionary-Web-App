@@ -18,6 +18,10 @@
     background-color: white;
 }
 
+.empty{
+  border-color: rgba(202, 14, 14, 0.893) !important;
+}
+
 .loading-screen{
   margin-top: 6%;
   margin-left: 41%;
