@@ -29,13 +29,15 @@ Project is built using React.js as frontend framework and uses vanilla CSS. With
 
 -   Working with an inconsistent API response
 
-    -   Sometimes the the audio file would be the second key in an object, sometimes third, sometimes there would be multiple key and sometimes there won't even be a one.
-    -   Sometimes API would take a long time to respond or would not respond at all.
-    -   Lot of response would return multiple objects each having it's own audio file, phonetic & parts of speech.
+    -  One of the key hurdles involved deciphering an inconsistent API response structure. Notably, the audio file might intermittently appear as either the second or third key within an object. The situation further varied with multiple keys or, at times, no existence of any.
+      
+    -  Adding complexity, responses at times also comprised several objects, each housing distinct audio files, phonetic data, and parts of speech. 
 
+    -   The API's slow response time also posed challenges, occasionally leading to delays or non-responsiveness.
+    
 -   Changing Themes & Fonts
 
-    -   Entire website should reflect colors when theme is changed and font family when selected instantaneously and should not reload the page.
+    -   Entire website should reflect colors when theme is changed and font family when selected instantaneously and should not reload the page to create a user friendly experience.
 
 -   Gracefully handling Errors
     -   When the data is being fetched by API, there should be a loading screen, if there is no data for a particular word, the UI should convey so.
