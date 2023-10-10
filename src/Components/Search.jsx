@@ -9,9 +9,10 @@ export default function Search({ data, setData }) {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [isLoading, setIsLoading] = React.useState(false);
   const [isIconClicked, setIsIconClicked] = React.useState(false);
+  const [isSearchTermEmpty, setIsSearchTermEmpty] = React.useState(false);  //new change
 
   React.useEffect(() => {
-    if (isIconClicked) {
+    if (isIconClicked && searchTerm.trim() !== '') {
       setIsLoading(true); //? Setting up the loading screen while pulling up the data  
       ApiCall(searchTerm).then((resp) => {
         if (Object.keys(resp).length === 0) {
@@ -38,12 +39,18 @@ export default function Search({ data, setData }) {
   //? Tracks change in input box
   const handleChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
+    setIsSearchTermEmpty(false); // new add
   }
 
   //? sets the iconClicked variable to true when search icon is clicked/enter is hit 
   const handleIconClick = (e) => {
     e.preventDefault();
-    setIsIconClicked(true);
+    if (searchTerm.trim() !== '') {
+      setIsIconClicked(true);
+    }
+    else {
+      setIsSearchTermEmpty(true);
+    }
   }
 
   if (isLoading) {
@@ -65,7 +72,7 @@ export default function Search({ data, setData }) {
 
   else {
     return (
-      <div className='search'>
+      <div className={`search ${isSearchTermEmpty ? 'empty' : ''}`}>
         <form action="">
           <input type="text" className='search-bar' value={searchTerm} onChange={handleChange} placeholder='Example :- life' />
           <button className='search-icon' onClick={handleIconClick}>
