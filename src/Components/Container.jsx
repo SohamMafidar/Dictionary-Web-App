@@ -1,76 +1,75 @@
-import React from 'react'
-import Hero from './Hero';
+import React from "react";
+import Hero from "./Hero";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMartiniGlassEmpty } from '@fortawesome/free-solid-svg-icons';
+import { faMartiniGlassEmpty } from "@fortawesome/free-solid-svg-icons";
 
 function Container(props) {
-    //* If there is data coming from API, display this screen
-    console.log(props);
-    if (props.data.length !== 0 && props.data[0] !== 'No data') {
-        const data = props.data;
-        const word = data.og;
-        const audio = data.audio;
-        const source = data.source;
-        const text = data.text;
+  //* If there is data coming from API, display this screen
+  if (props.emptyState) {
+    return (
+      <div className="no-content-container">
+        <p>No word added to be searched 😕 </p>
+        <p>Try to Add word to search 🙃</p>
+      </div>
+    );
+  }
+  if (props.data.length !== 0 && props.data[0] !== "No data") {
+    const data = props.data;
+    const word = data.og;
+    const audio = data.audio;
+    const source = data.source;
+    const text = data.text;
 
-        const container = data.map((item, index) => {
-            return (
-                <div key={index} className="container">
-                    <h3>{item.partOfSpeech}</h3>
-                    <div className="card">
-                        <h4>
-                            Meaning
-                        </h4>
-                        <ul>{
-                            item.definitions.map((meaning, index) => {
-                                return (
-                                    <li key={index}>
-                                        {meaning}
-                                    </li>
-                                )
-                            })
-                        }
+    const container = data.map((item, index) => {
+      return (
+        <div key={index} className="container">
+          <h3>{item.partOfSpeech}</h3>
+          <div className="card">
+            <h4>Meaning</h4>
+            <ul>
+              {item.definitions.map((meaning, index) => {
+                return <li key={index}>{meaning}</li>;
+              })}
+            </ul>
+          </div>
+        </div>
+      );
+    });
 
-                        </ul>
-                    </div>
+    return (
+      <section>
+        <Hero word={word} audio={audio} />
+        <div className="pronounciation-text-div">
+          <p id="pronounciation-text">{text} </p>
+        </div>
+        {container}
+        <footer>
+          <h4>Source</h4> <span>{source}</span>
+        </footer>
+      </section>
+    );
+  } else if (props.data[0] === "No data") {
+    return (
+      <div className="no-content-container">
+        <p>Oops! word not found 😕 </p>
+        <p>Try checking your spelling and try again 🙃</p>
+      </div>
+    );
+  }
 
-                </div>
-            )
-        })
-
-        return (
-            <section>
-                <Hero word={word} audio={audio} />
-                <div className='pronounciation-text-div'>
-                    <p id='pronounciation-text'>{text} </p>
-                </div>
-                {container}
-                <footer>
-                    <h4>Source</h4> <span>{source}</span>
-                </footer>
-            </section>
-        );
-    }
-
-    else if (props.data[0] === 'No data') {
-        return (
-            <div className="no-content-container">
-                <p>Oops! word not found 😕 </p>
-                <p>Try checking your spelling and try again 🙃</p>
-            </div>
-        )
-    }
-
-    //* If there is no data then show this screen
-    else {
-        return (
-            <div className="alt-container">
-                <h1>Wow such empty</h1>
-                <FontAwesomeIcon icon={faMartiniGlassEmpty} size='2xl' id='empty-icon' />
-            </div>
-        )
-    }
-
+  //* If there is no data then show this screen
+  else {
+    return (
+      <div className="alt-container">
+        <h1>Wow such empty</h1>
+        <FontAwesomeIcon
+          icon={faMartiniGlassEmpty}
+          size="2xl"
+          id="empty-icon"
+        />
+      </div>
+    );
+  }
 }
 
-export default Container
+export default Container;
