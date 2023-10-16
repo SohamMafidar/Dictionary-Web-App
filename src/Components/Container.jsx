@@ -5,6 +5,7 @@ import { faMartiniGlassEmpty } from '@fortawesome/free-solid-svg-icons';
 
 function Container(props) {
     //* If there is data coming from API, display this screen
+    console.log(props);
     if (props.data.length !== 0 && props.data[0] !== 'No data') {
         const data = props.data;
         const word = data.og;
@@ -12,18 +13,18 @@ function Container(props) {
         const source = data.source;
         const text = data.text;
 
-        const container = data.map((item) => {
+        const container = data.map((item, index) => {
             return (
-                <div className="container">
+                <div key={index} className="container">
                     <h3>{item.partOfSpeech}</h3>
                     <div className="card">
                         <h4>
                             Meaning
                         </h4>
                         <ul>{
-                            item.definitions.map((meaning) => {
+                            item.definitions.map((meaning, index) => {
                                 return (
-                                    <li>
+                                    <li key={index}>
                                         {meaning}
                                     </li>
                                 )
