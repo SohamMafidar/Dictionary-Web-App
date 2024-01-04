@@ -47,15 +47,15 @@ function Temp({ handleThemeChange, handleFontChange, theme }) {
                 </button>}
 
                 <div className={`dropdown ${isOpen ? "show" : ""}`} id="dropdown" >
-                    <a href="#/" onClick={() => handleFontClick('Space Mono')}>
+                    <p onClick={() => handleFontClick('Space Mono')}>
                         Monospace
-                    </a>
-                    <a href="#/" onClick={() => handleFontClick('Noto-Serif')}>
+                    </p>
+                    <p onClick={() => handleFontClick('Noto-Serif')}>
                         Serif
-                    </a>
-                    <a href="#/" onClick={() => handleFontClick('Roboto')}>
+                    </p>
+                    <p onClick={() => handleFontClick('Roboto')}>
                         Roboto
-                    </a>
+                    </p>
                 </div>
             </div>
             <div className="navbar__theme">
