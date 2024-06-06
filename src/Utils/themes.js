@@ -5,7 +5,7 @@ const themes = {
     },
     white: {
         "background-color": "#fff",
-        color: "black",
+        color: "#000",
     },
 };
 

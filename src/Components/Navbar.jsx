@@ -1,10 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faCaretDown, faBook, faSun } from "@fortawesome/free-solid-svg-icons";
+import { ThemeContext } from "../ThemeContext";
+import { FontContext } from "../FontContext";
 
-function Temp({ handleThemeChange, handleFontChange, theme }) {
+function Temp() {
     const [isOpen, setIsOpen] = React.useState(false);
     const dropdownRef = React.useRef();
+    const { theme, changeTheme } = React.useContext(ThemeContext);
+    const { changeFont } = React.useContext(FontContext);
 
     React.useEffect(() => {
         let handler = (event) => {
@@ -20,11 +24,13 @@ function Temp({ handleThemeChange, handleFontChange, theme }) {
 
     //? toggling theme change
     const toggleChange = () => {
-        handleThemeChange();
+        // handleThemeChange();
+        theme['background-color'] === '#000' ? changeTheme('white') : changeTheme('black');
+
     };
 
     const handleFontClick = (selectedOption) => {
-        handleFontChange(selectedOption);
+        changeFont(selectedOption);
         setIsOpen(false);
     };
 
@@ -47,10 +53,10 @@ function Temp({ handleThemeChange, handleFontChange, theme }) {
                 </button>}
 
                 <div className={`dropdown ${isOpen ? "show" : ""}`} id="dropdown" >
-                    <p onClick={() => handleFontClick('Space Mono')}>
+                    <p onClick={() => handleFontClick('Monospace')}>
                         Monospace
                     </p>
-                    <p onClick={() => handleFontClick('Noto-Serif')}>
+                    <p onClick={() => handleFontClick('NotoSerif')}>
                         Serif
                     </p>
                     <p onClick={() => handleFontClick('Roboto')}>

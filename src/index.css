@@ -8,6 +8,15 @@
   margin: 0;
 }
 
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0 ;
+}
+
 .dark{
   color: white !important;
   background-color: black !important;
@@ -28,7 +37,9 @@
 }
 
 main{
-    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Navbar styling */

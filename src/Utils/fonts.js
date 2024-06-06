@@ -1,7 +1,7 @@
-const fonts = [
-    { value: "Space Mono", label: "Monospace" },
-    { value: "Noto-Serif", label: "Serif" },
-    { value: "Roboto", label: "Roboto" },
-];
+const fonts = {
+    Monospace: { "font-family": "Space Mono" },
+    NotoSerif: { "font-family": "Serif" },
+    Roboto: { "font-family": "Roboto" },
+};
 
 export default fonts;
