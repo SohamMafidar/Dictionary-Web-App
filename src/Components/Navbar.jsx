@@ -51,7 +51,14 @@ function Temp() {
                     <FontAwesomeIcon icon={faCaretDown} className={`bx ${isOpen ? "show arrow" : ""} `}
                         id="arrow" />
                 </button>}
-
+                {/* Refactor below bit through following ->
+                
+                    1. Create an array storing font names.
+                    2. Map over the array and return a <p> element with onClick properties as earlier.
+                    3. Place that mapObj in the dropdown class.
+                    4. This reduces redundancy bcz we no longer need 3 different <p> elements.
+                
+                */}
                 <div className={`dropdown ${isOpen ? "show" : ""}`} id="dropdown" >
                     <p onClick={() => handleFontClick('Monospace')}>
                         Monospace
